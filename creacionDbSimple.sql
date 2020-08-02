@@ -1,9 +1,3 @@
--- ****************** SqlDBM: MySQL ******************;
--- ***************************************************;
-
-
--- ************************************** tipo_paciente
-
 USE covid;
 
 IF OBJECT_ID('T_PACIENTE', 'U') IS NOT NULL  -- Si la tabla <nombre_tabla> existe...
@@ -40,6 +34,7 @@ PRIMARY KEY (id)
 -- ************************************** sector
 CREATE TABLE T_UBICACION(
  id           int IDENTITY(1,1) NOT NULL ,
+ flag int NOT NULL,
  municipio varchar(100) NOT NULL ,
  estado varchar(100) NOT NULL ,
  pais varchar(100)  ,
@@ -90,6 +85,3 @@ FOREIGN KEY (id_tiempo) REFERENCES T_TIEMPO (id),
 FOREIGN KEY (id_ubicacion) REFERENCES T_UBICACION (id),
 FOREIGN KEY (id_estado) REFERENCES T_ESTADO (id),
 );
-
-
-
